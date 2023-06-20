@@ -5,7 +5,11 @@
 int doBalance(char *str) {
     Stack *stack = StackCreate();
 
-    char brackets[3][2] = {{'(', ')'},{'[', ']'},{'{', '}'}};
+    char brackets[3][2] = {
+        {'(', ')'},
+        {'[', ']'},
+        {'{', '}'}
+    };
 
     for (int i = 0; i < 100; i++) {
         char bracket = str[i];
