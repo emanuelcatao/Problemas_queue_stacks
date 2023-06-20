@@ -19,7 +19,7 @@ void generate(int n) {
   Queue_enqueue(queue, "1");
 
   char *front, *copy, *copy1;
-  for(int i = 0; i < n; i++) {
+  for(int i = 0; i < n - 1; i++) {
     Queue_dequeue(queue, &front);
 
     copy = strdup(front);
@@ -33,6 +33,8 @@ void generate(int n) {
 
     free(front);
   }
+  Queue_dequeue(queue, &front);
+  printf("%s\n", front);
 
   Queue_destroy(queue);
 }
@@ -42,7 +44,6 @@ int main(void) {
   int n;
   scanf("%d", &n);
   generate(n);
-  printf("\n");
 
   return 0;
 }
